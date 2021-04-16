@@ -1,12 +1,30 @@
 {
   "name": "linkshelf",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
+  "bin": {
+    "linkshelf": "dist/main.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "/bin/rm -rf dist",
+    "preversion": "npm run clean && npm run build",
+    "build": "esbuild src/main.ts --platform=node --bundle --outdir=dist --format=cjs --external:fs-extra"
   },
   "keywords": [],
   "author": "Jason Yu <me@ycmjason.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "@types/node": "^14.14.41",
+    "esbuild": "^0.11.11",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "fs-extra": "^9.1.0"
+  },
+  "files": [
+    "dist/main.js"
+  ]
 }
