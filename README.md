@@ -26,7 +26,7 @@ Here is an example configuration
 
 ```json
 {
-  "profilePicture": "./assets/pic.png",
+  "profilePicture": "https://pbs.twimg.com/profile_images/1380814586811711492/INwiwIpB_400x400.jpg",
   "name": "YCM Jason",
   "links": [
     {
